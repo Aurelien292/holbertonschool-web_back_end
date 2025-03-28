@@ -1,4 +1,7 @@
+![alt text](<ES6Bases.jpg>)
 
+![version](https://img.shields.io/badge/version-3.9.1-red)
+![shell](https://img.shields.io/badge/Inspected-green)
 
 # Bases ES6 en JavaScript
 
@@ -6,7 +9,7 @@
 
 #### Interactions entre les technologies pour une creation de site web .
 
-                            <===================>
+![alt text](<bandeau.png>)                           
 __*Python avec Flask*__ : Gère le côté serveur, traitant la logique métier, les requêtes HTTP, l'authentification des utilisateurs et la gestion des sessions.
 
 __*MySQL*__ : Stocke et organise les données essentielles du site (utilisateurs, articles, commandes), et interagit avec Flask pour récupérer et manipuler ces données.
@@ -17,7 +20,7 @@ __*CSS*__ : Stylise l'apparence de la page en contrôlant la mise en page, les c
 
 __*JavaScript*__ : Ajoute de l'interactivité côté client, permettant la gestion des événements et la validation dynamique des données.
                              
-                             <===================>
+![alt text](<bandeau.png>)                              
 
 ### Introduction 
 
