@@ -37,7 +37,7 @@ ES6 (ECMAScript 6), est une version majeure de JavaScript qui a introduit de nou
 - Generators
 - Maps et Sets
 
-
+![alt text](<bandeau.png>)    
 ### Différences entre une constante (const) et une variable (let / var).
 
 __*var*__ : Déclare une variable, accessible dans toute la fonction ou tout le script où elle est définie. Peut être redéclarée sans erreur.
@@ -71,7 +71,7 @@ class Vehicle {
 
 const myVehicle = new Vehicle("Car", 80);
 ```
-
+![alt text](<bandeau.png>)    
 ### Template literals
 Permettent de créer des __chaînes de caractères__ avec une syntaxe plus lisible. Ils utilisent les backticks ( ` ) et permettent d'inclure des variables ou des expressions à l'intérieur des chaînes grâce à ${  }.
 
@@ -111,7 +111,7 @@ Fichier module.js :
 export const pi = 3.14;
 // exporte une constante pi
 ```
-
+![alt text](<bandeau.png>)    
 ### Rest et spread 
 
 #### 1. Rest : Regrouper plusieurs éléments dans un tableau ou un objet
@@ -149,7 +149,7 @@ console.log(age);   // Affiche 25
 ```
 Le destructuring __const { name, age } = user;__ extrait les propriétés name et age de l'objet user et les assigne directement aux variables name et age, qui sont ensuite affichées avec console.log.
 
-
+![alt text](<bandeau.png>)    
 ### Promises
 Les promesses en JavaScript sont utilisées pour gérer des opérations asynchrones (comme les requêtes réseau) de manière plus claire et structurée. Elles représentent une valeur qui sera disponible à un moment donné, soit avec succès (résolue), soit en cas d'échec (rejetée).
 
@@ -220,7 +220,7 @@ console.log(survey.next().value);  // Affiche "undefined", car il n'y a plus de 
 
 __Une fonction generator est déclarée avec un astérisque function*.__ 
 
-
+![alt text](<bandeau.png>)    
 ### Maps et Sets
 
 __Map__ : Collection clé-valeur, avec des clés uniques et de n'importe quel type.
@@ -261,4 +261,5 @@ console.log(map.get('name')); // Affiche "Alice"
 const set = new Set([1, 2, 3, 4, 4, 5]);
 console.log(set); // Affiche Set { 1, 2, 3, 4, 5 }
 ```
-
+![alt text](<bandeau.png>)    
+![alt text](<bandeau.png>)    
