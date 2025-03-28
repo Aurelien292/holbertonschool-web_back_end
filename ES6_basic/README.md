@@ -27,18 +27,18 @@ __*JavaScript*__ : Ajoute de l'interactivité côté client, permettant la gesti
 ES6 (ECMAScript 6), est une version majeure de JavaScript qui a introduit de nouvelles fonctionnalités et améliorations afin de rendre le langage plus puissant. JavaScript a évolué pour inclure des fonctionnalités comme les __classes__, les __fonctions fléchées__, la __gestion des promesses__, __les modules__, et bien d'autres.
 
 #### Quelques fonctionnalités introduites dans ES6
-- Let et const 
-- Arrow functions
-- Template literals
-- Modules
-- Rest et spread
-- Destructuring
-- Promises
-- Generators
-- Maps et Sets
+1.Let et const 
+2.Arrow functions
+3.Template literals
+4.Modules
+5.Rest et spread
+6.Destructuring
+7.Promises
+8.Generators
+9.Maps et Sets
 
 ![alt text](<bandeau.png>)    
-### Différences entre une constante (const) et une variable (let / var).
+### 1.Différences entre une constante (const) et une variable (let / var).
 
 __*var*__ : Déclare une variable, accessible dans toute la fonction ou tout le script où elle est définie. Peut être redéclarée sans erreur.
 
@@ -72,17 +72,8 @@ class Vehicle {
 const myVehicle = new Vehicle("Car", 80);
 ```
 ![alt text](<bandeau.png>)    
-### Template literals
-Permettent de créer des __chaînes de caractères__ avec une syntaxe plus lisible. Ils utilisent les backticks ( ` ) et permettent d'inclure des variables ou des expressions à l'intérieur des chaînes grâce à ${  }.
 
-#### Exemple :
-```
-const name = "Alice";
-const Hello = `Bonjour, ${name}!`;  // Inclut la variable 'name' dans la chaîne
-console.log(Hello); // Affiche "Bonjour, Alice!"
-```
-
-### Arrow functions
+### 2.Arrow functions
 
 Les fonctions fléchées permettent d'écrire des fonctions de manière plus compacte.
 
@@ -99,8 +90,17 @@ console.log(sum(3, 4)); // Affiche 7
 const sum = (a, b) => a + b;  // Fonction fléchée : somme des deux arguments
 console.log(sum(3, 4)); // Affiche 7
 ```
+### 3.Template literals
+Permettent de créer des __chaînes de caractères__ avec une syntaxe plus lisible. Ils utilisent les backticks ( ` ) et permettent d'inclure des variables ou des expressions à l'intérieur des chaînes grâce à ${  }.
 
-### Les modules
+#### Exemple :
+```
+const name = "Alice";
+const Hello = `Bonjour, ${name}!`;  // Inclut la variable 'name' dans la chaîne
+console.log(Hello); // Affiche "Bonjour, Alice!"
+```
+
+### 4.Les modules
 
 Les modules ES6 permettent de diviser le code JavaScript en plusieurs fichiers. Grâce aux mots-clés __export__ et __import__, tu peux exporter des variables, fonctions, ou objets depuis un fichier et les importer dans un autre fichier.
 
@@ -112,9 +112,9 @@ export const pi = 3.14;
 // exporte une constante pi
 ```
 ![alt text](<bandeau.png>)    
-### Rest et spread 
+### 5.Rest et spread 
 
-#### 1. Rest : Regrouper plusieurs éléments dans un tableau ou un objet
+#### 5.1 Rest : Regrouper plusieurs éléments dans un tableau ou un objet
 #### Exemple :
 ```
 function sum(...numbers) {
@@ -125,7 +125,7 @@ console.log(sum(1, 2, 3, 4)); // Affiche 10
 ```
 L'opérateur __...numbers__ permet de regrouper tous les arguments passés à la fonction dans un tableau, puis la méthode __reduce__ additionne ces éléments pour retourner leur somme.
 
-#### 2. Spread : Étendre un tableau ou un objet
+#### 5.2 Spread : Étendre un tableau ou un objet
 #### Exemple :
 ```
 const arr1 = [1, 2, 3];
@@ -135,7 +135,7 @@ console.log(arr2);  // Affiche [1, 2, 3, 4, 5]
 L'opérateur __...arr1__ étend les éléments du tableau __*arr1*__ dans __*arr2*__, puis ajoute les éléments 4 et 5 à la fin de arr2 pour obtenir le résultat final [1, 2, 3, 4, 5].
 
 
-### Le destructuring
+### 6.Le destructuring
 
 Permet d'extraire facilement des valeurs d'un objet ou d'un tableau et de les assigner directement à des variables.
 
@@ -150,7 +150,7 @@ console.log(age);   // Affiche 25
 Le destructuring __const { name, age } = user;__ extrait les propriétés name et age de l'objet user et les assigne directement aux variables name et age, qui sont ensuite affichées avec console.log.
 
 ![alt text](<bandeau.png>)    
-### Promises
+### 7.Promises
 Les promesses en JavaScript sont utilisées pour gérer des opérations asynchrones (comme les requêtes réseau) de manière plus claire et structurée. Elles représentent une valeur qui sera disponible à un moment donné, soit avec succès (résolue), soit en cas d'échec (rejetée).
 
 #### Exemple :
@@ -184,7 +184,7 @@ fetchData
 
 * __.catch()__ : Permet de spécifier ce qui se passe si la promesse échoue, en gérant l'erreur.
 
-### Generators
+### 8.Generators
 
 *Utilisation des Generators pour un Questionnaire*
 
@@ -221,7 +221,7 @@ console.log(survey.next().value);  // Affiche "undefined", car il n'y a plus de 
 __Une fonction generator est déclarée avec un astérisque function*.__ 
 
 ![alt text](<bandeau.png>)    
-### Maps et Sets
+### 9.Maps et Sets
 
 __Map__ : Collection clé-valeur, avec des clés uniques et de n'importe quel type.
 
