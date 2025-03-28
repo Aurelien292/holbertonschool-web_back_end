@@ -27,15 +27,23 @@ __*JavaScript*__ : Ajoute de l'interactivité côté client, permettant la gesti
 ES6 (ECMAScript 6), est une version majeure de JavaScript qui a introduit de nouvelles fonctionnalités et améliorations afin de rendre le langage plus puissant. JavaScript a évolué pour inclure des fonctionnalités comme les __classes__, les __fonctions fléchées__, la __gestion des promesses__, __les modules__, et bien d'autres.
 
 #### Quelques fonctionnalités introduites dans ES6
-1.Let et const 
-2.Arrow functions
-3.Template literals
-4.Modules
-5.Rest et spread
-6.Destructuring
-7.Promises
-8.Generators
-9.Maps et Sets
+1.__Let et const__
+
+2.__Arrow functions__
+
+3.__Template literals__
+
+4.__Modules__
+
+5.__Rest et spread__
+
+6.__Destructuring__
+
+7.__Promises__
+
+8.__Generators__
+
+9.__Maps et Sets__
 
 ![alt text](<bandeau.png>)    
 ### 1.Différences entre une constante (const) et une variable (let / var).
