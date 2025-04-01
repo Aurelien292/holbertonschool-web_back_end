@@ -112,7 +112,7 @@ console.log(Hello); // Affiche "Bonjour, Alice!"
 
 Les modules ES6 permettent de diviser le code JavaScript en plusieurs fichiers. Grâce aux mots-clés __export__ et __import__, tu peux exporter des variables, fonctions, ou objets depuis un fichier et les importer dans un autre fichier.
 
-#### 4.1 'export' classique
+#### 4.1 __export__ classique
 Exporter des éléments de manière nommée (c'est-à-dire en donnant un nom explicite à l'élément exporté). Ces éléments doivent ensuite être importés avec le même nom.
 
 #### Exemple :
@@ -133,7 +133,7 @@ import { pi, add } from './module.js';  // importe les éléments de module.js
 console.log(pi);   // Affiche 3.14
 console.log(add(2, 3));  // Affiche 5
 ```
-#### 4.1 'export default'
+#### 4.1 __export default__
 
 L'export default est utilisé lorsque tu veux exporter un seul élément (fonction, objet, classe, etc.) par défaut d'un module. Tu n'as pas besoin de spécifier le nom de l'élément lors de l'importation.
 
