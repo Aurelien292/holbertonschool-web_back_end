@@ -26,7 +26,7 @@ npm run lint -- --fix
 
 #### Ce que fait cette commande :
 
-    npm run lint : Exécute le linter défini dans le fichier package.json pour vérifier le code et produit une sortie dans le terminal.
+    npm run lint -- : Exécute le linter défini dans le fichier package.json pour vérifier le code et produit une sortie dans le terminal.
 
     --fix : Applique automatiquement des corrections pour les erreurs détectées, comme des espaces manquants, des points-virgules ou des noms de variables mal formatés.
 
