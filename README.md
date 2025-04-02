@@ -11,6 +11,7 @@ Comment utiliser ces fonctionnalités pour mieux organiser le code, manipuler de
 ### Redirection
 [ES6 Basics](https://github.com/Aurelien292/holbertonschool-web_back_end/tree/main/ES6_basic), qui contient beaucoup d'informations nécessaires pour bien démarrer avec ES6.
 
+![bandeau](<https://github.com/Aurelien292/holbertonschool-web_back_end/blob/main/ES6_basic/bandeau.png>)
 
 ## Linter et correction automatique du code 
 
