@@ -22,4 +22,4 @@ def to_kv(k: str, v: Union[int, float]) -> Tuple[str, float]:
         tuple: Un tuple contenant la chaîne `k` et le carré de `v`
         sous forme de float.
     """
-    return(k ,float(v**2))
+    return (k, float(v**2))
