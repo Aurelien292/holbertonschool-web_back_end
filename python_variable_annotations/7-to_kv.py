@@ -1,4 +1,10 @@
 #!/usr/bin/env python3
+"""
+    Retourne un tuple contenant :
+    - Le premier élément est la chaîne `k`.
+    - Le deuxième élément est le carré de `v`, converti en float.
+    """
+
 from typing import Union, Tuple
 
 

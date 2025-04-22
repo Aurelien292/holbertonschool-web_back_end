@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+"""
+    Calcule la somme des éléments d'une liste contenant des entiers
+    et des flottants.
+    """
 from typing import List, Union
 
 
