@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 from typing import Callable
+"""
+    Crée une fonction qui multiplie un float par un multiplicateur donné.
+    """
 
 
 def make_multiplier(multiplier: float) -> Callable[[float], float]:

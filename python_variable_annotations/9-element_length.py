@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 from typing import List, Tuple, Iterable, Sequence
+"""
+    Prend une liste d'objets itérables et retourne une liste de
+    tuples (élément, longueur).
+    """
 
 
 def element_length(lst: Iterable[Sequence]) -> List[Tuple[Sequence, int]]:

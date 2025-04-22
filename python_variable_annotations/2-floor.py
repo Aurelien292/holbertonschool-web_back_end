@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 import math
+"""
+    Retourne le plancher (la partie entière inférieure) du nombre flottant n.
+    """
 
 
 def floor(n: float) -> int:
