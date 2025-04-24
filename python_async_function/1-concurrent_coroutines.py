@@ -7,12 +7,13 @@
 
 import asyncio
 from typing import List
-wait_random = __import__('0-basic_async_syntax').wait_random  # Remplace par ton nom de fichier
+wait_random = __import__('0-basic_async_syntax').wait_random
+
 
 async def wait_n(n: int, max_delay: int) -> List[float]:
     """
     Lancement de n coroutines wait_random avec le délai max donné.
-    Retourne les délais dans l'ordre d'achèvement (pas dans l’ordre de lancement).
+    Retourne les délais dans l'ordre d'achèvement
 
     Args:
         n (int): Nombre de fois qu'on appelle wait_random.
@@ -23,9 +24,9 @@ async def wait_n(n: int, max_delay: int) -> List[float]:
     """
     delays = []
     tasks = [asyncio.create_task(wait_random(max_delay)) for _ in range(n)]
-    
+
     for task in asyncio.as_completed(tasks):
         result = await task
         delays.append(result)
-    
+
     return delays
