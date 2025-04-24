@@ -23,12 +23,3 @@ def task_wait_random(max_delay: int) -> asyncio.Task:
     """
     # Crée et retourne la tâche en utilisant la fonction wait_random
     return asyncio.create_task(wait_random(max_delay))
-
-
-async def main():
-    task = task_wait_random(5)  # Crée une tâche avec max_delay = 5
-    await task  # Attendre la fin de la tâche
-    print(f"Task completed with result: {task.result()}")
-
-# Exécuter le test avec asyncio
-asyncio.run(main())

@@ -3,6 +3,7 @@
     Coroutine asynchrone qui attend un délai aléatoire entre 0 et
     max_delay secondes (inclus),puis retourne ce délai.
     """
+
 import asyncio
 import random
 
