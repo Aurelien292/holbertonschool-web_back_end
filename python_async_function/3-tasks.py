@@ -3,22 +3,11 @@
     Crée une tâche asyncio qui exécute `wait_random(max_delay)`
     de manière asynchrone.
     """
+
 import asyncio
-import importlib.util
-import sys
 
-# Définir le nom du module et le chemin du fichier contenant wait_random
-module_name = "wait_random"
-file_path = "0-basic_async_syntax.py"
 
-# Charger dynamiquement le module
-spec = importlib.util.spec_from_file_location(module_name, file_path)
-module = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(module)
-sys.modules[module_name] = module  # Ajouter le module dans sys.modules
-
-# Accéder à la fonction wait_random depuis le module chargé
-wait_random = module.wait_random  # Fonction disponible via le module
+wait_random = __import__('0-basic_async_syntax').wait_random
 
 
 def task_wait_random(max_delay: int) -> asyncio.Task:
@@ -34,3 +23,12 @@ def task_wait_random(max_delay: int) -> asyncio.Task:
     """
     # Crée et retourne la tâche en utilisant la fonction wait_random
     return asyncio.create_task(wait_random(max_delay))
+
+
+async def main():
+    task = task_wait_random(5)  # Crée une tâche avec max_delay = 5
+    await task  # Attendre la fin de la tâche
+    print(f"Task completed with result: {task.result()}")
+
+# Exécuter le test avec asyncio
+asyncio.run(main())
