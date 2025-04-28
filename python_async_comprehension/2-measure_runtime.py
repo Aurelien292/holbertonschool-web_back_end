@@ -14,7 +14,7 @@ async def measure_runtime():
     async_comprehension quatre fois en parallèle en utilisant asyncio.gather().
     Elle retourne le temps total d'exécution.
 
-    Retourne :
+    Return :
         float : Le temps total d'exécution en secondes.
     """
     start_time = time.time()

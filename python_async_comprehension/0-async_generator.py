@@ -14,12 +14,11 @@ async def async_generator():
     est généré de manière asynchrone, ce qui permet de ne pas bloquer
     l'exécution du programme principal.
 
-    Retourne :
+    Return :
         float : Un nombre flottant aléatoire compris entre 0 et 10
         à chaque itération.
     """
     for _ in range(10):
-        # Attend 1 sec
         await asyncio.sleep(1)
         # Génère un nombre aléatoire entre 0 et 10
         yield random.uniform(0, 10)
