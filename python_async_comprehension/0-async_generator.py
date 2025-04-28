@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
-
-import asyncio
-import random
 """
     Cette coroutine génère une séquence de 10 nombres aléatoires compris
     entre 0 et 10
     """
+import asyncio
+import random
 
 
 async def async_generator():
