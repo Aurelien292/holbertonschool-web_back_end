@@ -73,9 +73,9 @@ __" de manière non-bloquante "__ :  Lorsqu'une coroutine attend quelque chose, 
 
 __"await"__ permet d'attendre la fin d'une coroutine sans bloquer l'exécution du programme.
 Exemple complet await :
-
-import asyncio
 ```
+import asyncio
+
 # Définition de coroutines qui simulent des tâches longues
 async def task_1():
     print("Tâche 1 commence.")
