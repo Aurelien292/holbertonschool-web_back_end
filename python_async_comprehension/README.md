@@ -1,3 +1,4 @@
+![alt text](<asynchron.png>)
 # Asynchrones Tâches - Python Project
 
 __Introduction :__
