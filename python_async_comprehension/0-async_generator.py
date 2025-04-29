@@ -5,10 +5,10 @@
     """
 import asyncio
 import random
-from typing import AsyncGenerator
+from typing import Generator
 
 
-async def async_generator() -> AsyncGenerator[float, None, None]:
+async def async_generator() -> Generator[float, None, None]:
     """
     Cette coroutine génère une séquence de 10 nombres aléatoires
     compris entre 0 et 10, un nombre toutes les secondes. Chaque nombre
