@@ -99,7 +99,8 @@ class Server:
         return dataset[start:end]
 
     def get_hyper(self, page: int = 1, page_size: int = 10) -> dict:
-
+        """Returns a dictionary containing hypermedia pagination information.
+        """
         data = self.get_page(page, page_size)
         dataset_length = len(self.dataset())
         total_page = math.ceil(dataset_length / page_size)
@@ -110,5 +111,5 @@ class Server:
             "data": data,
             "next_page": page + 1 if page < total_page else None,
             "prev_page": page - 1 if page > 1 else None,
-            "total_pages": total_page,
+            "total_pages": total_page
         }
