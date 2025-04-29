@@ -2,7 +2,6 @@
 
 from typing import Dict, Any
 import csv
-import math
 from typing import List
 """
 Deletion-resilient hypermedia pagination
@@ -29,16 +28,6 @@ class Server:
 
         return self.__dataset
 
-    def indexed_dataset(self) -> Dict[int, List]:
-        """Dataset indexed by sorting position, starting at 0
-        """
-        if self.__indexed_dataset is None:
-            dataset = self.dataset()
-            truncated_dataset = dataset[:1000]
-            self.__indexed_dataset = {
-                i: dataset[i] for i in range(len(dataset))
-            }
-        return self.__indexed_dataset
 
     def indexed_dataset(self) -> Dict[int, List]:
         """Dataset indexed by sorting position, starting at 0
