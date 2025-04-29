@@ -1,4 +1,10 @@
 #!/usr/bin/env python3
+
+"""
+    Calcule les indices de début et de fin pour la pagination d'une liste.
+    """
+
+
 import csv
 from typing import List
 
