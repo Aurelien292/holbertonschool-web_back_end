@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-from typing import Dict, Any
-"""
-Deletion-resilient hypermedia pagination
-"""
 
+from typing import Dict, Any
 import csv
 import math
 from typing import List
+"""
+Deletion-resilient hypermedia pagination
+"""
 
 
 class Server:
@@ -82,8 +82,8 @@ class Server:
             current_index += 1
 
         return {
-            'index': 3,
-            'data': [...],
-            'page_size': 2,
-            'next_index': 5
+            "index": index,
+            "data": data,
+            "page_size": len(data),
+            "next_index": current_index
         }
