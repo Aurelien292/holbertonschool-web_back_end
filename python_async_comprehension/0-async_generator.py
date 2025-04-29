@@ -8,7 +8,7 @@ import random
 from typing import AsyncGenerator
 
 
-async def async_generator() -> AsyncGenerator[float, None]:
+async def async_generator() -> AsyncGenerator[float, None, None]:
     """
     Cette coroutine génère une séquence de 10 nombres aléatoires
     compris entre 0 et 10, un nombre toutes les secondes. Chaque nombre
