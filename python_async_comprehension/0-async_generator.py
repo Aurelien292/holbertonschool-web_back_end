@@ -15,7 +15,7 @@ async def async_generator() -> AsyncGenerator[float, None]:
     est généré de manière asynchrone, ce qui permet de ne pas bloquer
     l'exécution du programme principal.
 
-    Return :
+    Yields:
         float : Un nombre flottant aléatoire compris entre 0 et 10
         à chaque itération.
     """
