@@ -82,8 +82,8 @@ class Server:
             current_index += 1
 
         return {
-            "index": index,
-            "next_index": current_index,
-            "page_size": len(data),
+            "index": 3,
             "data": data,
+            "page_size": len(data),
+            "next_index": 5,
         }
