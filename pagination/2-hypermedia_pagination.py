@@ -1,4 +1,10 @@
 #!/usr/bin/env python3
+"""
+    Calcule les indices de début et de fin pour la pagination d'une liste.
+    Classe Server pour paginer un dataset des prénoms populaires de bébés.
+    Charge et met en cache les données du fichier CSV.
+    Retourne les lignes correspondant à la page demandée.
+    """
 import csv
 import math
 from typing import List
