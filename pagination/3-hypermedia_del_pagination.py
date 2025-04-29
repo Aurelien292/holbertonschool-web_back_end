@@ -1,11 +1,9 @@
 #!/usr/bin/env python3
-
-from typing import Dict, Any
-import csv
-from typing import List
 """
 Deletion-resilient hypermedia pagination
 """
+from typing import Dict, List
+import csv
 
 
 class Server:
@@ -28,7 +26,6 @@ class Server:
 
         return self.__dataset
 
-
     def indexed_dataset(self) -> Dict[int, List]:
         """Dataset indexed by sorting position, starting at 0
         """
@@ -40,7 +37,7 @@ class Server:
         return self.__indexed_dataset
 
     def get_hyper_index(self, index: int = None,
-                        page_size: int = 10) -> Dict[str, Any]:
+                        page_size: int = 10) -> Dict:
         """
         Renvoie une page du dataset avec pagination résiliente à
         la suppression.
@@ -69,10 +66,14 @@ class Server:
                 data.append(indexed_data[current_index])
                 count += 1
             current_index += 1
+            next_index = (
+                current_index
+                if current_index < len(self.dataset())
+                else None)
 
         return {
             "index": index,
-            "data": data,
+            "next_index": next_index,
             "page_size": len(data),
-            "next_index": current_index
+            "data": data
         }
