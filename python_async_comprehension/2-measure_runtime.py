@@ -8,7 +8,7 @@ import asyncio
 async_comprehension = __import__('1-async_comprehension').async_comprehension
 
 
-async def measure_runtime():
+async def measure_runtime() -> float:
     """
     Cette coroutine mesure le temps nécessaire pour exécuter la coroutine
     async_comprehension quatre fois en parallèle en utilisant asyncio.gather().
