@@ -1,5 +1,5 @@
 // update only document Holberton school
-db.school.updateOne(
+db.school.update(
   { name: "Holberton school" },  // Filtre: on cherche le document avec name = "Holberton school"
   { $set: { address: "972 Mission street" } }  // Ajout ou mise à jour du champ address
 )
