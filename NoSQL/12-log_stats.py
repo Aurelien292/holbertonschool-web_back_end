@@ -8,6 +8,7 @@ from pymongo import MongoClient
 def log_stats():
     x = MongoClient('mongodb://localhost:27017/').logs.nginx
 
+    print(f'{x.count_documents({})} logs')
     print(f'Methods:')
     print(f'\tGET: {x.count_documents({"method": "GET"})}')
     print(f'\tPOST: {x.count_documents({"method": "POST"})}')
