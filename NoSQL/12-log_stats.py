@@ -16,7 +16,7 @@ def log_stats():
     print(f'    method PATCH: {x.count_documents({"method": "PATCH"})}')
     print(f'    method DELETE: {x.count_documents({"method": "DELETE"})}')
     print(f'{x.count_documents({"method": "GET", "path": "/status"})} '
-          status check')
+          'status check')
 
 
 if __name__ == "__main__":
