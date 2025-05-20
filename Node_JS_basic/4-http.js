@@ -1,7 +1,6 @@
 const http = require('http');
 
-const app = http.createServer((req, res) => {
-  console.log('Request received:', req.method, req.url); // En plus
+const app = http.createServer((req, res) => {s
   res.writeHead('200', { 'Content-Type': 'text/plain' });
   res.write('Hello Holberton School!\n');
   res.end();
