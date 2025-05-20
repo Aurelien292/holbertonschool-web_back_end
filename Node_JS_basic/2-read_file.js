@@ -1,55 +1,61 @@
 const fs = require('fs');
 
-function countStudents(path) {
-  return new Promise((resolve, reject) => {
-    fs.readFile(path, { encoding: 'utf8', flag: 'r' }, (err, data) => {
-      if (err) {
-        reject(Error('Cannot load the database'));
-        return;
-      }
+function countStudents(database) {
+  try {
+    // Lire le fichier CSV de manière synchrone
+    const data = fs.readFileSync(database, 'utf-8');
 
-      // Séparer le contenu en lignes
-      const content = data.split('\n').filter((line) => line.trim() !== ''); // Enlève les lignes vides
+    // Séparer les lignes du fichier et filtrer les lignes vides
+    const lines = data.split('\n').filter((line) => line.trim().length > 0);
 
-      if (content.length < 2) {
-        reject(Error('Cannot load the database'));
-        return;
-      }
+    // Si le fichier contient trop peu de lignes (en-tête + données), on lève une erreur
+    if (lines.length <= 1) {
+      throw new Error('Cannot load the database');
+    }
 
-      // Créer un objet pour stocker les étudiants par domaine
-      const fields = {};
+    // Créer un objet pour stocker les étudiants par domaine
+    const fields = {};
 
-      // Traiter les lignes suivantes qui contiennent les données des étudiants
-      for (let i = 1; i < content.length; i += 1) {
-        const student = content[i].split(',');
+    // Lire l'en-tête du CSV pour déterminer les noms de colonnes
+    const header = lines[0].split(',');
+
+    // Traiter les lignes des étudiants
+    for (let i = 1; i < lines.length; i += 1) {
+      const student = lines[i].split(',');
+
+      // Vérifier que la ligne a le bon nombre de colonnes
+      if (student.length === header.length) {
+        const firstname = student[0].trim();
+        const field = student[3].trim();
 
         // Si le domaine n'est pas défini, on l'initialise
-        if (!fields[student[3]]) {
-          fields[student[3]] = [];
+        if (!fields[field]) {
+          fields[field] = [];
         }
 
-        // Ajouter le prénom de l'étudiant à la liste de ce domaine
-        fields[student[3]].push(student[0]);
+        // Ajouter l'étudiant à la liste du domaine
+        fields[field].push(firstname);
       }
+    }
 
-      // Affichage du nombre total d'étudiants
-      const totalStudents = content.length - 1; // On exclut la première ligne (en-tête)
-      const response = [`Number of students: ${totalStudents}`];
-      console.log(response[0]);
+    // Calculer le nombre total d'étudiants
+    const totalStudents = Object.values(fields).reduce((acc, curr) => acc + curr.length, 0);
 
-      // Affichage du nombre d'étudiants par domaine
-      for (const field in fields) {
-        if (Object.prototype.hasOwnProperty.call(fields, field)) {
-          const studentList = fields[field];
-          const message = `Number of students in ${field}: ${studentList.length}. List: ${studentList.join(', ')}`;
-          console.log(message);
-          response.push(message);
-        }
+    // Afficher le nombre total d'étudiants
+    console.log(`Number of students: ${totalStudents}`);
+
+    // Afficher le nombre d'étudiants par domaine et la liste des prénoms
+    for (const field in fields) {
+      if (Object.prototype.hasOwnProperty.call(fields, field)) {
+        const count = fields[field].length;
+        const list = fields[field].join(', ');
+        console.log(`Number of students in ${field}: ${count}. List: ${list}`);
       }
-
-      resolve(response);
-    });
-  });
+    }
+  } catch (error) {
+    // En cas d'erreur (fichier introuvable, erreur de format, etc.), afficher le message d'erreur
+    throw new Error('Cannot load the database');
+  }
 }
 
 module.exports = countStudents;
