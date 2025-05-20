@@ -1,36 +1,27 @@
 const http = require('http');
 const countStudents = require('./3-read_file_async');
 
-const msg = 'This is the list of our students\n';
-
 const app = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/html');
+  const database = process.argv[2];
+
+  res.setHeader('Content-Type', 'text/plain');
 
   if (req.url === '/') {
-    res.end('Hello Holberton School!\n');
+    res.statusCode = 200;
+    res.end('Hello Holberton School!');
   } else if (req.url === '/students') {
-    const database = process.argv[2];
-    if (!database) {
-      res.statusCode = 500;
-      res.end('Database is missing\n');
-      return;
-    }
-    res.write('This is the list of our students\n');
     countStudents(database)
-      .then((message) => {
-        res.end(message.join('\n'));
+      .then((students) => {
+        const response = `This is the list of our students\n${students.join('\n')}`;
+        res.statusCode = 200;
+        res.end(response);
       })
-      .catch((err) => {
-        res.end(`${msg}${err.message}`);
+      .catch(() => {
+        res.statusCode = 200;
+        res.end('This is the list of our students\nCannot load the database');
       });
-  } else {
-    res.statuscode = 404;
-    res.end('Not found\n');
   }
 });
-app.listen(1245, () => {
-  console.log('Server running on port 1245');
-});
 
+app.listen(1245);
 module.exports = app;
