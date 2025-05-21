@@ -16,7 +16,7 @@ app.get('/students', async (request, response) => {
   try {
     const result = await counStStudents(path);
     response.set('Content-Type', 'text/plain');
-    response.send(`${header}${result.join('\n')}\n`);
+    response.send(`${header}${result.join('\n')}`);
   } catch (error) {
     response.set('Content-Type', 'text/plain');
     response.send(`${header}Cannot load the database\n`);
