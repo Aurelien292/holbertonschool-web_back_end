@@ -1,12 +1,12 @@
 const express = require('express');
-const counStStudents = require('./3-read_file_async');
+const counStudents = require('./3-read_file_async');
 
 const app = express();
 const port = 1245;
 
-app.get('/', (request, resonse) => {
-  resonse.set('Content-Type', 'text/plain');
-  resonse.send('Hello Holberton School!');
+app.get('/', (request, response) => {
+  response.set('Content-Type', 'text/plain');
+  response.send('Hello Holberton School!');
 });
 
 app.get('/students', async (request, response) => {
@@ -14,12 +14,12 @@ app.get('/students', async (request, response) => {
   const header = 'This is the list of our students\n';
 
   try {
-    const result = await counStStudents(path);
+    const result = await counStudents(path);
     response.set('Content-Type', 'text/plain');
     response.send(`${header}${result.join('\n')}`);
   } catch (error) {
     response.set('Content-Type', 'text/plain');
-    response.send(`${header}Cannot load the database\n`);
+    response.send(`${header}Cannot load the database`);
   }
 });
 app.listen(port);
