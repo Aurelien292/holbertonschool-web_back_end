@@ -7,9 +7,9 @@ const port = 1245;
 
 app.use('/', router);
 
-
+if ( require.main === module) {
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
-
+}
 export default app;
